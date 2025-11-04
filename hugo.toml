@@ -1,0 +1,23 @@
+baseURL = "https://andreasflakstad.no/"
+languageCode = "en-us"
+title = "Andreas Flakstad"
+
+# Pagination (new syntax in Hugo v0.128+)
+[pagination]
+  pagerSize = 10
+
+# Markdown configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # General
+  author = "Andreas Flakstad"
+  defaultTheme = "auto"
+  customCSS = ["css/custom.css"]
+
+  # Footer
+  hideFooter = true
+  hideCredits = true
