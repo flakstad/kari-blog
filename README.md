@@ -16,6 +16,7 @@ hugo server -D --bind 0.0.0.0 --port 1313 --baseURL http://localhost:1313
 # Bygg produksjonsversjon
 hugo
 ```
+Obs: -D inkluderer drafts. Og om en post har dato i framtiden vises den ikke.
 
 ### Struktur
 

@@ -1,9 +1,5 @@
 {{ define "main" }}
-<article>
-  <p style="margin-bottom: 2rem;">
-    <a href="https://heikari.no/blogg/">← Tilbake til alle innlegg</a>
-  </p>
-
+<div class="post-single">
   <header>
     <h1>{{ .Title }}</h1>
     <div class="meta">
@@ -17,5 +13,5 @@
   <div class="content">
     {{ .Content }}
   </div>
-</article>
+</div>
 {{ end }}
