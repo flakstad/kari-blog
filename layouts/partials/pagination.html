@@ -1,8 +1,8 @@
-<nav style="text-align: center; margin: 2rem 0;">
+<nav class="pagination">
   {{ with .Paginator.Prev }}
-    <a href="{{ .URL }}">« Newer posts</a>
+    <a href="{{ .URL }}" role="button" class="secondary">← Nyere innlegg</a>
   {{ end }}
   {{ with .Paginator.Next }}
-    <a href="{{ .URL }}" style="margin-left:1rem;">Older posts »</a>
+    <a href="{{ .URL }}" role="button" class="secondary">Eldre innlegg →</a>
   {{ end }}
 </nav>

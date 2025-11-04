@@ -1,6 +1,6 @@
-baseURL = "https://andreasflakstad.no/"
-languageCode = "en-us"
-title = "Andreas Flakstad"
+baseURL = "https://heikari.no/blogg/"
+languageCode = "no"
+title = "Kari Blogg"
 
 # Pagination (new syntax in Hugo v0.128+)
 [pagination]
@@ -14,10 +14,11 @@ title = "Andreas Flakstad"
 
 [params]
   # General
-  author = "Andreas Flakstad"
+  author = "Kari"
   defaultTheme = "auto"
   customCSS = ["css/custom.css"]
+  description = "Nyheter og innsikt om AI-telefonassistenter og kundeservice"
 
   # Footer
-  hideFooter = true
+  hideFooter = false
   hideCredits = true

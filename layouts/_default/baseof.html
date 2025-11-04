@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  
+  <!-- Pico CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pink.min.css">
   <link rel="stylesheet" href="/css/custom.css">
+  <link rel="icon" type="image/svg+xml" href="https://heikari.no/logo2.svg">
 </head>
 <body>
+  {{ partial "custom-header.html" . }}
 
-  <header>
-    {{ if .IsHome }}
-      {{ partialCached "custom-header.html" . }}
-    {{ end }}
-  </header>
-
-  <main>
+  <main class="container">
     {{ block "main" . }}{{ end }}
   </main>
 
-
+  {{ partial "custom-footer.html" . }}
 </body>
 </html>

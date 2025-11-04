@@ -1,13 +1,17 @@
 {{ define "main" }}
-  <div class="posts-list">
+  <div class="post-list">
     {{ range .Paginator.Pages }}
-      <a href="{{ .RelPermalink }}" class="post-link">
-        <article class="post">
-          <p class="post-date">{{ .Date.Format "Jan 2, 2006" }}</p>
-          <h2 class="post-title">{{ .Title }}</h2>
-          <div class="post-summary">{{ .Summary }}</div>
-        </article>
-      </a>
+      <div class="post-item">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="meta">
+          {{ .Date.Format "2. January 2006" }}
+          {{ if .Params.author }}
+            · {{ .Params.author }}
+          {{ end }}
+        </div>
+        <div class="summary">{{ .Summary }}</div>
+        <p><a href="{{ .RelPermalink }}">Les mer →</a></p>
+      </div>
     {{ end }}
   </div>
 
