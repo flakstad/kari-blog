@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Kari Blogg</title>
-    <link>https://heikari.no/blogg/posts/</link>
+    <link>https://blog.heikari.no/posts/</link>
     <description>Recent content in Posts on Kari Blogg</description>
     <generator>Hugo</generator>
     <language>no</language>
     <lastBuildDate>Tue, 04 Nov 2025 06:00:00 +0200</lastBuildDate>
-    <atom:link href="https://heikari.no/blogg/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.heikari.no/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Møt Kari - Din AI-resepsjonist som aldri tar fri</title>
-      <link>https://heikari.no/blogg/posts/introducing_kari/</link>
+      <link>https://blog.heikari.no/posts/intro-kari/</link>
       <pubDate>Tue, 04 Nov 2025 06:00:00 +0200</pubDate>
-      <guid>https://heikari.no/blogg/posts/introducing_kari/</guid>
+      <guid>https://blog.heikari.no/posts/intro-kari/</guid>
       <description>&lt;p&gt;Har du noen gang lurt på hvor mange kunder du mister fordi du ikke rakk å ta telefonen? Eller kanskje du har tenkt at mobilsvar føles upersonlig og gammeldags? Vi også. Derfor bygget vi Kari.&lt;/p&gt;</description>
     </item>
   </channel>

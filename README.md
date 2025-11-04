@@ -10,8 +10,7 @@ Bloggen bruker Hugo som static site generator og er designet for å matche hoved
 
 ```bash
 # Start Hugo dev server
-hugo server -D
-hugo server -D --bind 0.0.0.0 --port 1313 --baseURL http://localhost:1313
+hugo serve -D
 
 # Bygg produksjonsversjon
 hugo
@@ -66,10 +65,17 @@ Resten av innlegget...
 
 ### Deployment
 
-Generer statiske filer med `hugo` og server `public/`-mappen.
+Bloggen er hostet på et eget subdomene: **blog.heikari.no**
+
+Generer statiske filer med:
+
+```bash
+hugo
+```
+
+Filene i `public/`-mappen kan deretter deployes til en webserver som serverer blog.heikari.no.
 
 ## Lenker
 
 - Hovedside: https://heikari.no
-- Blogg: https://heikari.no/blogg/
-
+- Blogg: https://blog.heikari.no
