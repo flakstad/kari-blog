@@ -12,6 +12,12 @@ title = "Kari Blogg"
     [markup.goldmark.renderer]
       unsafe = true
 
+# Sitemap configuration
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 [params]
   # General
   author = "Kari"
@@ -22,3 +28,13 @@ title = "Kari Blogg"
   # Footer
   hideFooter = false
   hideCredits = true
+
+# SEO and social sharing
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Configure outputs
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]

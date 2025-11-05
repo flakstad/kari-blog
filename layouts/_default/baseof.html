@@ -5,11 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="keywords" content="AI resepsjonist, telefonassistent, kundeservice, automatisering, Kari">
+  <meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ .Permalink }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:image" content="https://heikari.no/logo2.svg">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  {{ if .IsPage }}
+  <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
+  <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ if .Params.author }}<meta property="article:author" content="{{ .Params.author }}">{{ end }}
+  {{ end }}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="{{ .Permalink }}">
+  <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="twitter:image" content="https://heikari.no/logo2.svg">
+  
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kari",
+    "legalName": "Flakstad Software AS",
+    "url": "https://heikari.no",
+    "logo": "https://heikari.no/logo2.svg",
+    "description": "AI-drevet telefonassistent som erstatter mobilsvar med ekte samtaler på norsk",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NO"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+47-513-06-426",
+      "contactType": "customer service",
+      "areaServed": "NO",
+      "availableLanguage": ["Norwegian", "English"]
+    },
+    "sameAs": [
+      "https://blog.heikari.no"
+    ]
+  }
+  </script>
+  
+  <!-- JSON-LD WebSite Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://blog.heikari.no/#website",
+    "url": "https://blog.heikari.no",
+    "name": "{{ .Site.Title }}",
+    "description": "{{ .Site.Params.description }}",
+    "inLanguage": "no",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kari",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heikari.no/logo2.svg"
+      }
+    }
+  }
+  </script>
+  
+  {{ if .IsPage }}
+  <!-- JSON-LD Article Schema for blog posts -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ .Title }}",
+    "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}",
+    "image": "https://heikari.no/logo2.svg",
+    "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kari",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heikari.no/logo2.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    }
+  }
+  </script>
+  {{ end }}
   
   <!-- Pico CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pink.min.css">
   <link rel="stylesheet" href="/css/custom.css">
   <link rel="icon" type="image/svg+xml" href="https://heikari.no/logo2.svg">
+  
+  <!-- PostHog Analytics -->
+  <script src="/js/posthog.js"></script>
 </head>
 <body>
   {{ partial "custom-header.html" . }}
